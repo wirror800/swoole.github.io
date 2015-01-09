@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel='stylesheet' href='/static/css/markdown.css' type='text/css' />
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap3/dist/css/bootstrap.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="/static/bootstrap3/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/wiki/noframe.css" rel="stylesheet">
+    <link href="/static/css/code.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/static/bootstrap3/dist/js/html5shiv.js"></script>
+    <script src="/static/bootstrap3/dist/js/respond.min.js"></script>
+    <![endif]-->
+    <script src="/static/js/rainbow-custom.min.js"></script>
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/dtree.js"></script>
+    <title>介绍_Swoole扩展_Swoole文档中心</title>
+</head>
+<body>
+
+<div class="navbar-inverse navbar-fixed-top">
+    <div class="navbar-collapse collapse container">
+        <ul class="nav navbar-nav">
+                        <li class="active">
+            <a href="/wiki/index/prid-1">Swoole扩展</a></li>
+                        <li >
+            <a href="/wiki/index/prid-2">Swoole框架</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="wiki_main">
+    <div class="row row-offcanvas wiki_tree" id="sidebar">
+        <div class="sidebar-offcanvas" role="navigation">
+            <div class="sidebar-nav">
+                <ul class="nav">
+                                        <li class="active">
+                        <h3><a href="/wiki/page/1.html">介绍</a></h3>
+                    </li>
+                    <li>
+                                        <ul class="nav li2">
+                                            <li ><a href="/wiki/page/7.html">环境依赖</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/6.html">编译安装</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/8.html">版本更新记录</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/211.html">新特性使用</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/9.html">项目路线图</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/10.html">提交错误报告</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/11.html">内核参数调整</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/12.html">开发者列表</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/303.html">周边相关项目</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/304.html">用户与案例</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/117.html">常见问题</a></li>
+                        <li>
+                                                    </li>
+                                        </ul>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/2.html">Server</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/3.html">Client</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/213.html">Process</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/182.html">AsyncIO</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/245.html">Memory</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/326.html">HttpServer</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/4.html">高级</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/5.html">其他</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                    </ul>
+            </div><!--/.well -->
+        </div>
+    </div>
+    <div class="wiki_content blob instapaper_body">
+        <article class="markdown-body entry-content" itemprop="mainContentOfPage">
+                        <h1>介绍</h1>
+                        <p>Swoole虽然是标准的PHP扩展，实际上与普通的扩展不同。普通的扩展只是提供一个库函数。而swoole扩展在运行后会接管PHP的控制权，进入事件循环。当IO事件发生后，swoole会自动回调指定的PHP函数。</p>
+
+<h2>swoole_server</h2>
+
+<p>强大的TCP/UDP Server框架，多线程，EventLoop，事件驱动，异步，Worker进程组，Task异步任务，毫秒定时器，SSL/TLS隧道加密。</p>
+
+<ul>
+<li>swoole_http_server是swoole_server的子类，内置了Http和WebSocket的支持</li>
+</ul>
+
+<h2>swoole_client</h2>
+
+<p>TCP/UDP客户端，支持同步并发调用，也支持异步事件驱动。</p>
+
+<h2>swoole_event</h2>
+
+<p>EventLoop API，让用户可以直接操作底层的事件循环，将socket，stream，管道等Linux文件加入到事件循环中。</p>
+
+<h2>swoole_async</h2>
+
+<p>异步IO接口，提供了 异步文件系统IO，异步DNS查询，异步MySQL等API。包括2个重要的子模块：</p>
+
+<ul>
+<li>swoole_timer，异步毫秒定时器，可以实现间隔时间或一次性的定时任务</li>
+<li>file，文件系统操作的异步接口</li>
+</ul>
+
+<h2>swoole_process</h2>
+
+<p>进程管理模块，可以方便的创建子进程，进程间通信，进程管理。</p>
+
+<h2>swoole_buffer</h2>
+
+<p>强大的内存区管理工具，像C一样进行指针计算，又无需关心内存的申请和释放，而且不用担心内存越界，底层全部做好了。</p>
+
+<h2>swoole_table</h2>
+
+<p>基于共享内存和自旋锁实现的超高性能内存表。彻底解决线程，进程间数据共享，加锁同步等问题。</p>
+
+        </article>
+        <hr />
+        <!-- Duoshuo Comment BEGIN -->
+        <div class="ds-thread"></div>
+        <script type="text/javascript">
+                        var duoshuoQuery = {short_name:"www4swoole"};
+            (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';
+                ds.async = true;
+                ds.src = 'http://static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                        || document.getElementsByTagName('body')[0]).appendChild(ds);
+                $(ds).ready(function() {
+                    var resize_count = 0;
+                    var timer = setInterval(function() {
+                        if ($('div#ds-thread')[0].clientHeight < 100) {
+                            return;
+                        }
+                        var a = $("#sidebar")[0];
+                        var b = $("div.wiki_content")[0];
+                        if (a.clientHeight < b.clientHeight) {
+                            a.style.height = (b.clientHeight + 2) + "px";
+                        } else {
+                            b.style.height = (a.clientHeight + 2) + "px";
+                        }
+                        window.clearInterval(timer);
+                    }, 300);
+                });
+            })();
+                        $(document).ready(function() {
+                $('a').each(function(e){
+                    //外链
+                    if(this.href.substring(7, location.host.length +7) != location.host) {
+                        this.target = "_blank";
+                    }
+                });
+            });
+        </script>
+    </div>
+</div>
+<div class="container footer" style="height: 80px; clear: both">
+    <hr />
+    <p>&copy; Swoole.com 2013 备案号：京ICP备10021081号 官方QQ群：321637118 开发组邮件列表：
+        <a href="mailto:team@swoole.com">team@swoole.com</a>
+    </p>
+    <div style="display: none">
+        <script type="text/javascript">
+            var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+            document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4967f2faa888a2e52742bebe7fcb5f7d' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+    </div>
+</div>
+</body>
+</html>

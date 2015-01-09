@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel='stylesheet' href='/static/css/markdown.css' type='text/css' />
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap3/dist/css/bootstrap.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="/static/bootstrap3/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/wiki/noframe.css" rel="stylesheet">
+    <link href="/static/css/code.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/static/bootstrap3/dist/js/html5shiv.js"></script>
+    <script src="/static/bootstrap3/dist/js/respond.min.js"></script>
+    <![endif]-->
+    <script src="/static/js/rainbow-custom.min.js"></script>
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/dtree.js"></script>
+    <title>内核参数调整_Swoole扩展_Swoole文档中心</title>
+</head>
+<body>
+
+<div class="navbar-inverse navbar-fixed-top">
+    <div class="navbar-collapse collapse container">
+        <ul class="nav navbar-nav">
+                        <li class="active">
+            <a href="/wiki/index/prid-1">Swoole扩展</a></li>
+                        <li >
+            <a href="/wiki/index/prid-2">Swoole框架</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="wiki_main">
+    <div class="row row-offcanvas wiki_tree" id="sidebar">
+        <div class="sidebar-offcanvas" role="navigation">
+            <div class="sidebar-nav">
+                <ul class="nav">
+                                        <li class="active">
+                        <h3><a href="/wiki/page/1.html">介绍</a></h3>
+                    </li>
+                    <li>
+                                        <ul class="nav li2">
+                                            <li ><a href="/wiki/page/7.html">环境依赖</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/6.html">编译安装</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/8.html">版本更新记录</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/211.html">新特性使用</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/9.html">项目路线图</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/10.html">提交错误报告</a></li>
+                        <li>
+                                                    </li>
+                                            <li id="wiki_node_active"><a href="/wiki/page/11.html">内核参数调整</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/12.html">开发者列表</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/303.html">周边相关项目</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/304.html">用户与案例</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/117.html">常见问题</a></li>
+                        <li>
+                                                    </li>
+                                        </ul>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/2.html">Server</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/3.html">Client</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/213.html">Process</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/182.html">AsyncIO</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/245.html">Memory</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/326.html">HttpServer</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/4.html">高级</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/5.html">其他</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                    </ul>
+            </div><!--/.well -->
+        </div>
+    </div>
+    <div class="wiki_content blob instapaper_body">
+        <article class="markdown-body entry-content" itemprop="mainContentOfPage">
+                        <h1>内核参数调整</h1>
+                        <h2>Linux</h2>
+
+<ul>
+<li>ulimit -n 要调整为100000甚至更大。<br />
+如何调这个参数，可以参考网上的一些文章。命令行下执行 ulimit -n 100000即可修改。如果不能修改，需要设置  /etc/security/limits.conf，加入
+
+<ul>
+<li>hard nofile 100000</li>
+<li>soft nofile 100000</li>
+</ul></li>
+<li>net.unix.max_dgram_qlen = 100， swoole使用unix socket dgram来做进程间通信，如果请求量很大，需要调整此参数。系统默认为10，可以设置为100或者更大。<br />
+或者增加worker进程的数量，减少单个worker进程分配的请求量。</li>
+<li>net.core.wmem_max 修改此参数增加socket缓存区的内存大小<br />
+
+<ul>
+<li>net.core.wmem_default = 8388608</li>
+<li>net.core.rmem_default = 8388608</li>
+<li>net.core.rmem_max = 16777216</li>
+<li>net.core.wmem_max = 16777216</li>
+</ul></li>
+<li>net.ipv4.tcp_tw_reuse 是否socket reuse，此函数的作用是，Server重启时可以快速重新使用监听的端口。如果没有设置此参数，会导致server重启时发生端口未及时释放而启动失败</li>
+<li>net.ipv4.tcp_tw_recycle 使用socket快速回收，短连接Server需要开启此参数</li>
+</ul>
+
+<h2>消息队列设置</h2>
+
+<p>当使用消息队列作为进程间通信方式时，需要调整此内核参数</p>
+
+<ul>
+<li>kernel.msgmnb = 4203520，消息队列的最大字节数</li>
+<li>kernel.msgmni = 64，最多允许创建多少个消息队列</li>
+<li>kernel.msgmax = 8192，消息队列单条数据最大的长度</li>
+</ul>
+
+<h2>FreeBSD/MacOS</h2>
+
+<ul>
+<li>sysctl -w net.local.dgram.maxdgram=8192</li>
+<li>sysctl -w net.local.dgram.recvspace=200000
+修改Unix Socket的buffer区尺寸</li>
+</ul>
+
+<h2>开启CoreDump</h2>
+
+<ul>
+<li>kernel.core_pattern = /data/core_files/core-%e-%p-%t</li>
+</ul>
+
+<blockquote>
+  <p>开启core-dump后，一旦程序发生异常，会将进程导出到文件。对于调查程序问题有很大的帮助</p>
+</blockquote>
+
+<h2>其他重要配置</h2>
+
+<ul>
+<li>net.ipv4.tcp_syncookies=1</li>
+<li>net.ipv4.tcp_max_syn_backlog=81920</li>
+<li>net.ipv4.tcp_synack_retries=3</li>
+<li>net.ipv4.tcp_syn_retries=3</li>
+<li>net.ipv4.tcp_fin_timeout = 30</li>
+<li>net.ipv4.tcp_keepalive_time = 300</li>
+<li>net.ipv4.tcp_tw_reuse = 1</li>
+<li>net.ipv4.tcp_tw_recycle = 1</li>
+<li>net.ipv4.ip_local_port_range = 20000    65000</li>
+<li>net.ipv4.tcp_max_tw_buckets = 200000</li>
+<li>net.ipv4.route.max_size = 5242880</li>
+</ul>
+
+<h2>查看配置是否生效</h2>
+
+<p>如：修改net.unix.max_dgram_qlen = 100后，通过</p>
+
+<pre><code class="shell" data-language="shell">cat /proc/sys/net/unix/max_dgram_qlen
+</code></pre>
+
+<p>如果修改成功，这里是新设置的值。</p>
+
+        </article>
+        <hr />
+        <!-- Duoshuo Comment BEGIN -->
+        <div class="ds-thread"></div>
+        <script type="text/javascript">
+                        var duoshuoQuery = {short_name:"www4swoole"};
+            (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';
+                ds.async = true;
+                ds.src = 'http://static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                        || document.getElementsByTagName('body')[0]).appendChild(ds);
+                $(ds).ready(function() {
+                    var resize_count = 0;
+                    var timer = setInterval(function() {
+                        if ($('div#ds-thread')[0].clientHeight < 100) {
+                            return;
+                        }
+                        var a = $("#sidebar")[0];
+                        var b = $("div.wiki_content")[0];
+                        if (a.clientHeight < b.clientHeight) {
+                            a.style.height = (b.clientHeight + 2) + "px";
+                        } else {
+                            b.style.height = (a.clientHeight + 2) + "px";
+                        }
+                        window.clearInterval(timer);
+                    }, 300);
+                });
+            })();
+                        $(document).ready(function() {
+                $('a').each(function(e){
+                    //外链
+                    if(this.href.substring(7, location.host.length +7) != location.host) {
+                        this.target = "_blank";
+                    }
+                });
+            });
+        </script>
+    </div>
+</div>
+<div class="container footer" style="height: 80px; clear: both">
+    <hr />
+    <p>&copy; Swoole.com 2013 备案号：京ICP备10021081号 官方QQ群：321637118 开发组邮件列表：
+        <a href="mailto:team@swoole.com">team@swoole.com</a>
+    </p>
+    <div style="display: none">
+        <script type="text/javascript">
+            var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+            document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4967f2faa888a2e52742bebe7fcb5f7d' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+    </div>
+</div>
+</body>
+</html>

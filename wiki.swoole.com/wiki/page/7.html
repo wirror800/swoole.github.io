@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel='stylesheet' href='/static/css/markdown.css' type='text/css' />
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap3/dist/css/bootstrap.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="/static/bootstrap3/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/wiki/noframe.css" rel="stylesheet">
+    <link href="/static/css/code.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/static/bootstrap3/dist/js/html5shiv.js"></script>
+    <script src="/static/bootstrap3/dist/js/respond.min.js"></script>
+    <![endif]-->
+    <script src="/static/js/rainbow-custom.min.js"></script>
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/dtree.js"></script>
+    <title>环境依赖_Swoole扩展_Swoole文档中心</title>
+</head>
+<body>
+
+<div class="navbar-inverse navbar-fixed-top">
+    <div class="navbar-collapse collapse container">
+        <ul class="nav navbar-nav">
+                        <li class="active">
+            <a href="/wiki/index/prid-1">Swoole扩展</a></li>
+                        <li >
+            <a href="/wiki/index/prid-2">Swoole框架</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="wiki_main">
+    <div class="row row-offcanvas wiki_tree" id="sidebar">
+        <div class="sidebar-offcanvas" role="navigation">
+            <div class="sidebar-nav">
+                <ul class="nav">
+                                        <li class="active">
+                        <h3><a href="/wiki/page/1.html">介绍</a></h3>
+                    </li>
+                    <li>
+                                        <ul class="nav li2">
+                                            <li id="wiki_node_active"><a href="/wiki/page/7.html">环境依赖</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/6.html">编译安装</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/8.html">版本更新记录</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/211.html">新特性使用</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/9.html">项目路线图</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/10.html">提交错误报告</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/11.html">内核参数调整</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/12.html">开发者列表</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/303.html">周边相关项目</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/304.html">用户与案例</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/117.html">常见问题</a></li>
+                        <li>
+                                                    </li>
+                                        </ul>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/2.html">Server</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/3.html">Client</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/213.html">Process</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/182.html">AsyncIO</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/245.html">Memory</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/326.html">HttpServer</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/4.html">高级</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/5.html">其他</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                    </ul>
+            </div><!--/.well -->
+        </div>
+    </div>
+    <div class="wiki_content blob instapaper_body">
+        <article class="markdown-body entry-content" itemprop="mainContentOfPage">
+                        <h1>环境依赖</h1>
+                        <ul>
+<li>仅支持Linux，FreeBSD，MacOS，3类操作系统</li>
+<li>Linux内核版本2.3.32以上</li>
+<li>PHP5.3.10以上版本</li>
+<li>gcc4.4以上版本或者clang</li>
+<li>cmake2.4+，编译为libswoole.so作为C/C++库时需要使用cmake</li>
+</ul>
+
+<h2>PHP版本依赖</h2>
+
+<ul>
+<li>swoole仅支持PHP5.3.10或更高版本，建议使用PHP5.4+</li>
+<li>swoole不依赖php的stream、sockets、pcntl、posix、sysvmsg等扩展。PHP只需安装最基本的扩展即可  </li>
+</ul>
+
+<h2>推荐使用的Linux发行版</h2>
+
+<ul>
+<li>CentOS6.2+</li>
+<li>Ubuntu12+</li>
+<li>Debian6+</li>
+</ul>
+
+<h2>ARM平台（树莓派Raspberry PI）</h2>
+
+<ul>
+<li>请使用swoole-1.7.4版本</li>
+<li>在编译Swoole时，需要手工修改Makefile去掉-O2编译参数  </li>
+</ul>
+
+<h2>CygWin环境支持（Windows系统）</h2>
+
+<p>swoole-1.7.7增加了对cygwin环境的支持，在Windows环境下，可以直接使用cygwin + php 来跑swoole程序。</p>
+
+<ul>
+<li>安装cygwin，并安装gcc、make、autoconf、php 4个包</li>
+<li>下载swoole源码，在cygwin-shell中进行phpize/configure/make/make install</li>
+<li>修改php.ini，加入swoole.so</li>
+</ul>
+
+<blockquote>
+  <p>cygwin模式不支持sendfile接口，并且只支持SWOOLE_BASE模式<br />
+  cygwin模式下需要对PHP进行简化，去掉不使用的扩展，避免进程占用内存过大，导致Fork操作失败</p>
+</blockquote>
+
+        </article>
+        <hr />
+        <!-- Duoshuo Comment BEGIN -->
+        <div class="ds-thread"></div>
+        <script type="text/javascript">
+                        var duoshuoQuery = {short_name:"www4swoole"};
+            (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';
+                ds.async = true;
+                ds.src = 'http://static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                        || document.getElementsByTagName('body')[0]).appendChild(ds);
+                $(ds).ready(function() {
+                    var resize_count = 0;
+                    var timer = setInterval(function() {
+                        if ($('div#ds-thread')[0].clientHeight < 100) {
+                            return;
+                        }
+                        var a = $("#sidebar")[0];
+                        var b = $("div.wiki_content")[0];
+                        if (a.clientHeight < b.clientHeight) {
+                            a.style.height = (b.clientHeight + 2) + "px";
+                        } else {
+                            b.style.height = (a.clientHeight + 2) + "px";
+                        }
+                        window.clearInterval(timer);
+                    }, 300);
+                });
+            })();
+                        $(document).ready(function() {
+                $('a').each(function(e){
+                    //外链
+                    if(this.href.substring(7, location.host.length +7) != location.host) {
+                        this.target = "_blank";
+                    }
+                });
+            });
+        </script>
+    </div>
+</div>
+<div class="container footer" style="height: 80px; clear: both">
+    <hr />
+    <p>&copy; Swoole.com 2013 备案号：京ICP备10021081号 官方QQ群：321637118 开发组邮件列表：
+        <a href="mailto:team@swoole.com">team@swoole.com</a>
+    </p>
+    <div style="display: none">
+        <script type="text/javascript">
+            var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+            document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4967f2faa888a2e52742bebe7fcb5f7d' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+    </div>
+</div>
+</body>
+</html>

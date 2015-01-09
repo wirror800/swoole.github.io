@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel='stylesheet' href='/static/css/markdown.css' type='text/css' />
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap3/dist/css/bootstrap.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="/static/bootstrap3/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/wiki/noframe.css" rel="stylesheet">
+    <link href="/static/css/code.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/static/bootstrap3/dist/js/html5shiv.js"></script>
+    <script src="/static/bootstrap3/dist/js/respond.min.js"></script>
+    <![endif]-->
+    <script src="/static/js/rainbow-custom.min.js"></script>
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/dtree.js"></script>
+    <title>异步文件系统IO_Swoole扩展_Swoole文档中心</title>
+</head>
+<body>
+
+<div class="navbar-inverse navbar-fixed-top">
+    <div class="navbar-collapse collapse container">
+        <ul class="nav navbar-nav">
+                        <li class="active">
+            <a href="/wiki/index/prid-1">Swoole扩展</a></li>
+                        <li >
+            <a href="/wiki/index/prid-2">Swoole框架</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="wiki_main">
+    <div class="row row-offcanvas wiki_tree" id="sidebar">
+        <div class="sidebar-offcanvas" role="navigation">
+            <div class="sidebar-nav">
+                <ul class="nav">
+                                        <li class="active">
+                        <h3><a href="/wiki/page/1.html">介绍</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/2.html">Server</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/3.html">Client</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/213.html">Process</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/182.html">AsyncIO</a></h3>
+                    </li>
+                    <li>
+                                        <ul class="nav li2">
+                                            <li id="wiki_node_active"><a href="/wiki/page/183.html">异步文件系统IO</a></li>
+                        <li>
+                                                        <ul class="nav li3">
+                                                                <li ><a href="/wiki/page/184.html">swoole_async_readfile</a></li>
+                                                                <li ><a href="/wiki/page/185.html">swoole_async_writefile</a></li>
+                                                                <li ><a href="/wiki/page/188.html">swoole_async_read</a></li>
+                                                                <li ><a href="/wiki/page/189.html">swoole_async_write</a></li>
+                                                                <li ><a href="/wiki/page/186.html">swoole_async_dns_lookup</a></li>
+                                                            </ul>
+                                                    </li>
+                                            <li ><a href="/wiki/page/242.html">EventLoop</a></li>
+                        <li>
+                                                    </li>
+                                            <li ><a href="/wiki/page/244.html">异步毫秒定时器</a></li>
+                        <li>
+                                                    </li>
+                                        </ul>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/245.html">Memory</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/326.html">HttpServer</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/4.html">高级</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                        <li class="active">
+                        <h3><a href="/wiki/page/5.html">其他</a></h3>
+                    </li>
+                    <li>
+                                        </li>
+                                    </ul>
+            </div><!--/.well -->
+        </div>
+    </div>
+    <div class="wiki_content blob instapaper_body">
+        <article class="markdown-body entry-content" itemprop="mainContentOfPage">
+                        <h1>异步文件系统IO</h1>
+                        
+
+        </article>
+        <hr />
+        <!-- Duoshuo Comment BEGIN -->
+        <div class="ds-thread"></div>
+        <script type="text/javascript">
+                        var duoshuoQuery = {short_name:"www4swoole"};
+            (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';
+                ds.async = true;
+                ds.src = 'http://static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                        || document.getElementsByTagName('body')[0]).appendChild(ds);
+                $(ds).ready(function() {
+                    var resize_count = 0;
+                    var timer = setInterval(function() {
+                        if ($('div#ds-thread')[0].clientHeight < 100) {
+                            return;
+                        }
+                        var a = $("#sidebar")[0];
+                        var b = $("div.wiki_content")[0];
+                        if (a.clientHeight < b.clientHeight) {
+                            a.style.height = (b.clientHeight + 2) + "px";
+                        } else {
+                            b.style.height = (a.clientHeight + 2) + "px";
+                        }
+                        window.clearInterval(timer);
+                    }, 300);
+                });
+            })();
+                        $(document).ready(function() {
+                $('a').each(function(e){
+                    //外链
+                    if(this.href.substring(7, location.host.length +7) != location.host) {
+                        this.target = "_blank";
+                    }
+                });
+            });
+        </script>
+    </div>
+</div>
+<div class="container footer" style="height: 80px; clear: both">
+    <hr />
+    <p>&copy; Swoole.com 2013 备案号：京ICP备10021081号 官方QQ群：321637118 开发组邮件列表：
+        <a href="mailto:team@swoole.com">team@swoole.com</a>
+    </p>
+    <div style="display: none">
+        <script type="text/javascript">
+            var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+            document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4967f2faa888a2e52742bebe7fcb5f7d' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+    </div>
+</div>
+</body>
+</html>
